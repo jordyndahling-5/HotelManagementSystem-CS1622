@@ -5,7 +5,7 @@ import java.util.Random;
  * room class for the hotel room info
  */
 public class Room {
-    private int roomNum;
+    protected int roomNum;
     private int numBeds;
 
     //initial constructor
