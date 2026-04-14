@@ -7,7 +7,7 @@ public class Reservation {
     private int reservationTotalCost;
     private Room room;
     private Amenity amenity;
-    private Bill bill;
+
 
     //initial constructor
     public Reservation() {
@@ -30,7 +30,7 @@ public class Reservation {
         this.reservationTotalCost = reservationTotalCost;
         this.room = room;
         this.amenity = amenity;
-        this.bill = bill;
+
     }
 
     /**
@@ -43,7 +43,6 @@ public class Reservation {
     public int getReservationTotalCost() {return reservationTotalCost;}
     public Room getRoom() {return room;}
     public Amenity getamenity() {return amenity;}
-    public Bill bill() {return bill; }
 
     //Setters
 
@@ -81,13 +80,7 @@ public class Reservation {
         this.amenity = amenity;
     }
 
-    /**
-     * sets bill values
-     * @param bill
-     */
-    public void setBill (Bill bill) {
-        this.bill = bill;
-    }
+
 
     public void calcReservationTotalCost(int roomCost, int amenityCost) {
         reservationTotalCost = roomCost + amenityCost;
