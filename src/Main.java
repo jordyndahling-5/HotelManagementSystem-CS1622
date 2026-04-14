@@ -14,61 +14,53 @@ public class Main {
          * setting info for person #1
          */
 
-        Bill bill1 = new Bill();
+
 
         Room room1 = new StandardRoom();
         room1.setRoomNum(random.nextInt(100));
         room1.setNumBeds(2);
         room1.setNumNights(3);
+        room1.calcCost();
 
         Amenity amenity1 = new Amenity();
         amenity1.setNumExcursions(2);
-        amenity1.setFoodPlan("Breakfast Buffet");
+        amenity1.setFoodPlan("Buffet");
         amenity1.setNumFridgeFood(4);
+        amenity1.calcCost();
 
         Reservation person1 = new Reservation();
         person1.setName("Jordyn");
         person1.setDateArrival("March 8");
+        person1.calcReservationTotalCost(room1.roomCost, amenity1.getAmenityCost());
         person1.setRoom(room1);
         person1.setAmenity(amenity1);
-        person1.setBill(bill1);
 
-        room1.calcCost();
-        bill1.setCostFoodPlan(person1.getNumNights() * 10);
-        bill1.setCostExcursions(amenity1.getNumExcursions() * 20);
-        bill1.setCostFridgeFood(amenity1.getNumFridgeFood() * 5);
-        bill1.setTotalCost(bill1.getCostRoom() + bill1.getCostFoodPlan() +
-                bill1.getCostExcursions() + bill1.getCostFridgeFood());
 
 
         /**
          * setting info for person #2
          */
 
-        Bill bill2 = new Bill();
 
         Room room2 = new SuiteRoom();
         room2.setRoomNum(random.nextInt(100, 200));
         room2.setNumBeds(1);
+        room2.setNumNights(4);
+        room2.calcCost();
 
         Amenity amenity2 = new Amenity();
         amenity2.setNumExcursions(4);
-        amenity2.setFoodPlan("Breakfast Buffet");
+        amenity2.setFoodPlan("Buffet");
         amenity2.setNumFridgeFood(1);
+        amenity2.calcCost();
 
         Reservation person2 = new Reservation();
         person2.setName("Madi");
         person2.setDateArrival("March 15");
-        person2.setNumNights(4);
+        person2.calcReservationTotalCost(room2.roomCost, amenity2.getAmenityCost());
         person2.setRoom(room2);
         person2.setAmenity(amenity2);
 
-        bill2.setCostRoom(person2.getNumNights() * room2.getNumBeds() * 50);
-        bill2.setCostFoodPlan(person2.getNumNights() * 10);
-        bill2.setCostExcursions(amenity2.getNumExcursions() * 20);
-        bill2.setCostFridgeFood(amenity2.getNumFridgeFood() * 5);
-        bill2.setTotalCost(bill2.getCostRoom() + bill2.getCostFoodPlan() +
-                bill2.getCostExcursions() + bill2.getCostFridgeFood());
 
 
         /**
@@ -80,15 +72,14 @@ public class Main {
         System.out.println("Room Number: " + room1.getRoomNum());
         System.out.println("Food Plan: " + amenity1.getFoodPlan());
         System.out.println("Bill: ");
-        System.out.println("Cost of Room: $" + bill1.getCostRoom());
-        System.out.println("Food Plan Cost: $" + bill1.getCostFoodPlan());
-        System.out.println("Fridge Food Cost: $" + bill1.getCostFridgeFood());
-        System.out.println("Excursions Cost: $" + bill1.getCostExcursions());
-        System.out.println("Total Cost: $" + bill1.getTotalCost());
+        System.out.println("Cost of Room: $" + room1.roomCost);
+        System.out.println("Amenity Costs: $" + amenity1.getAmenityCost());
+        System.out.println("Total Cost: $" + person1.getReservationTotalCost());
 
         System.out.println(" ");
         System.out.println(" ");
         System.out.println(" ");
+
 
         System.out.println("-----North Shore Hotel Stay Summary-----");
         System.out.println("Reservation Name: " + person2.getName());
@@ -96,11 +87,9 @@ public class Main {
         System.out.println("Room Number: " + room2.getRoomNum());
         System.out.println("Food Plan: " + amenity2.getFoodPlan());
         System.out.println("Bill: ");
-        System.out.println("Cost of Room: $" + bill2.getCostRoom());
-        System.out.println("Food Plan Cost: $" + bill2.getCostFoodPlan());
-        System.out.println("Fridge Food Cost: $" + bill2.getCostFridgeFood());
-        System.out.println("Excursions Cost: $" + bill2.getCostExcursions());
-        System.out.println("Total Cost: $" + bill2.getTotalCost());
+        System.out.println("Cost of Room: $" + room2.roomCost);
+        System.out.println("Amenity Costs: $" + amenity2.getAmenityCost());
+        System.out.println("Total Cost: $" + person2.getReservationTotalCost());
 
 
 

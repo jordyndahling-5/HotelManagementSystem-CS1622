@@ -8,7 +8,7 @@ public class Room implements Chargeable {
     protected int roomNum;
     protected int numBeds;
     protected int numNights;
-    protected int roomCost;
+    public int roomCost;
 
 
     //initial constructor
@@ -16,7 +16,7 @@ public class Room implements Chargeable {
         this.roomNum = 0;
         this.numBeds = 0;
         this.numNights = 0;
-        this.roomCost = 0;
+
     }
 
     /**
@@ -70,7 +70,9 @@ public class Room implements Chargeable {
         this.numNights = numNights;
     }
 
-
+    /**
+     * calculates the room cost
+     */
     @Override
     public void calcCost() {
         roomCost = numBeds * numNights;

@@ -4,6 +4,7 @@
 public class Reservation {
     private String name;
     private String dateArrival;
+    private int reservationTotalCost;
     private Room room;
     private Amenity amenity;
     private Bill bill;
@@ -12,6 +13,7 @@ public class Reservation {
     public Reservation() {
         this.name = "";
         this.dateArrival = "";
+        this.reservationTotalCost = 0;
     }
 
     /**
@@ -21,10 +23,11 @@ public class Reservation {
      * @param room
      * @param amenity
      */
-    public Reservation(String name, String dateArrival, Room room,
+    public Reservation(String name, String dateArrival, int reservationTotalCost, Room room,
                        Amenity amenity) {
         this.name = name;
         this.dateArrival = dateArrival;
+        this.reservationTotalCost = reservationTotalCost;
         this.room = room;
         this.amenity = amenity;
         this.bill = bill;
@@ -37,7 +40,7 @@ public class Reservation {
     //Getters
     public String getName() { return name;}
     public String getDateArrival() {return dateArrival; }
-
+    public int getReservationTotalCost() {return reservationTotalCost;}
     public Room getRoom() {return room;}
     public Amenity getamenity() {return amenity;}
     public Bill bill() {return bill; }
@@ -86,6 +89,12 @@ public class Reservation {
         this.bill = bill;
     }
 
+    public void calcReservationTotalCost(int roomCost, int amenityCost) {
+        reservationTotalCost = roomCost + amenityCost;
+
+    }
+
+
     /**
      * toString function
      * @return
@@ -94,7 +103,6 @@ public class Reservation {
     public String toString() {
         return "Name{" +
                 "Date of Arrival =" + dateArrival  +
-                ", Number of Nights =" + numNights +
                 '}';
     }
 }
