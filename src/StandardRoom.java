@@ -1,7 +1,7 @@
 public class StandardRoom extends Room {
     private int standardRoomRate;
 
-    public StandardRoom(int standardRoomRate) {
+    public StandardRoom() {
         this.standardRoomRate = 50;
     }
 

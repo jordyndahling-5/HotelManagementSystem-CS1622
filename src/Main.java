@@ -16,7 +16,7 @@ public class Main {
 
         Bill bill1 = new Bill();
 
-        Room room1 = new StandardRoom(50);
+        Room room1 = new StandardRoom();
         room1.setRoomNum(random.nextInt(100));
         room1.setNumBeds(2);
         room1.setNumNights(3);
