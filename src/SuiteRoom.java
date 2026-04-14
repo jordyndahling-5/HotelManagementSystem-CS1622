@@ -8,6 +8,7 @@ public class SuiteRoom extends Room{
         this.suiteRoomRate = 100;
     }
 
+    public int getSuiteRoomRate() {return suiteRoomRate;}
 
     /**
      * overrides setRoomNum for more specific suite room

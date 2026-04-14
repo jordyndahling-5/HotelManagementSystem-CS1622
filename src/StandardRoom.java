@@ -8,6 +8,10 @@ public class StandardRoom extends Room {
         this.standardRoomRate = 50;
     }
 
+    public int getStandardRoomRate() {
+        return standardRoomRate;
+    }
+
     /**
      * overrides previous setRoomNum for specific standard room one
      * @param roomNum

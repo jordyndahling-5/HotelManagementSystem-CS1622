@@ -14,12 +14,9 @@ public class Main {
         GUI guiRes1 = new GUI();
         guiRes1.setVisible(true);
 
-
         GUI guiRes2 = new GUI();
         guiRes2.setVisible(true);
 
-        GUI guiRes3 = new GUI();
-        guiRes3.setVisible(true);
 
 
     }
