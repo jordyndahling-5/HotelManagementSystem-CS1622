@@ -4,7 +4,6 @@
 public class Reservation {
     private String name;
     private String dateArrival;
-    private int numNights;
     private Room room;
     private Amenity amenity;
     private Bill bill;
@@ -13,22 +12,19 @@ public class Reservation {
     public Reservation() {
         this.name = "";
         this.dateArrival = "";
-        this.numNights = 0;
     }
 
     /**
      * a reservation contructor that takes inputs
      * @param name
      * @param dateArrival
-     * @param numNights
      * @param room
      * @param amenity
      */
-    public Reservation(String name, String dateArrival, int numNights, Room room,
+    public Reservation(String name, String dateArrival, Room room,
                        Amenity amenity) {
         this.name = name;
         this.dateArrival = dateArrival;
-        this.numNights = numNights;
         this.room = room;
         this.amenity = amenity;
         this.bill = bill;
@@ -41,7 +37,7 @@ public class Reservation {
     //Getters
     public String getName() { return name;}
     public String getDateArrival() {return dateArrival; }
-    public int getNumNights() {return numNights;}
+
     public Room getRoom() {return room;}
     public Amenity getamenity() {return amenity;}
     public Bill bill() {return bill; }
@@ -64,13 +60,7 @@ public class Reservation {
         this.dateArrival = dateArrival;
     }
 
-    /**
-     * sets number of nights value
-     * @param numNights
-     */
-    public void setNumNights(int numNights) {
-        this.numNights = numNights;
-    }
+
 
     /**
      * sets room values

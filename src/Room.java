@@ -4,24 +4,33 @@ import java.util.Random;
 /**
  * room class for the hotel room info
  */
-public class Room {
+public class Room implements Chargeable {
     protected int roomNum;
-    private int numBeds;
+    protected int numBeds;
+    protected int numNights;
+    protected int roomCost;
+
 
     //initial constructor
     public Room() {
         this.roomNum = 0;
         this.numBeds = 0;
+        this.numNights = 0;
+        this.roomCost = 0;
     }
 
     /**
      * Room constructor that takes input
      * @param roomNum
      * @param numBeds
+     * @param numNights
+     * @param roomCost
      */
-    public Room(int roomNum, int numBeds) {
+    public Room(int roomNum, int numBeds, int numNights, int roomCost) {
         this.roomNum = roomNum;
         this.numBeds = numBeds;
+        this.numNights = numNights;
+        this.roomCost = roomCost;
     }
     Random random = new Random();
 
@@ -32,6 +41,8 @@ public class Room {
     //Getters
     public int getRoomNum() { return roomNum; }
     public int getNumBeds() { return numBeds; }
+    public int getNumNights() {return numNights;}
+    public int getRoomCost() {return roomCost;}
 
     //Setters
 
@@ -52,6 +63,20 @@ public class Room {
     }
 
     /**
+     * sets number of nights value
+     * @param numNights
+     */
+    public void setNumNights(int numNights) {
+        this.numNights = numNights;
+    }
+
+
+    @Override
+    public void calcCost() {
+        roomCost = numBeds * numNights;
+    }
+
+    /**
      * toString functionDE3
      *
      * @return
@@ -61,6 +86,8 @@ public class Room {
         return "Room{" +
                 "Room Number =" + roomNum +
                 "Number of Beds =" + numBeds +
+                "Number of Nights =" + numNights +
                 '}';
     }
+
 }

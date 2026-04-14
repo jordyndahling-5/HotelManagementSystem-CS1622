@@ -16,9 +16,10 @@ public class Main {
 
         Bill bill1 = new Bill();
 
-        Room room1 = new Room();
+        Room room1 = new StandardRoom(50);
         room1.setRoomNum(random.nextInt(100));
         room1.setNumBeds(2);
+        room1.setNumNights(3);
 
         Amenity amenity1 = new Amenity();
         amenity1.setNumExcursions(2);
@@ -28,12 +29,11 @@ public class Main {
         Reservation person1 = new Reservation();
         person1.setName("Jordyn");
         person1.setDateArrival("March 8");
-        person1.setNumNights(3);
         person1.setRoom(room1);
         person1.setAmenity(amenity1);
         person1.setBill(bill1);
 
-        bill1.setCostRoom(person1.getNumNights() * room1.getNumBeds() * 50);
+        room1.calcCost();
         bill1.setCostFoodPlan(person1.getNumNights() * 10);
         bill1.setCostExcursions(amenity1.getNumExcursions() * 20);
         bill1.setCostFridgeFood(amenity1.getNumFridgeFood() * 5);
@@ -47,13 +47,13 @@ public class Main {
 
         Bill bill2 = new Bill();
 
-        Room room2 = new Room();
-        room2.setRoomNum(random.nextInt(100));
+        Room room2 = new SuiteRoom();
+        room2.setRoomNum(random.nextInt(100, 200));
         room2.setNumBeds(1);
 
         Amenity amenity2 = new Amenity();
         amenity2.setNumExcursions(4);
-        amenity2.setFoodPlan("Breakfast Biffet");
+        amenity2.setFoodPlan("Breakfast Buffet");
         amenity2.setNumFridgeFood(1);
 
         Reservation person2 = new Reservation();
