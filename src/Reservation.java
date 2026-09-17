@@ -1,5 +1,5 @@
 /**
- * class for the reservations made at the hotel
+ * class for the reservations made at the hotel.
  */
 public class Reservation {
     private String name;
