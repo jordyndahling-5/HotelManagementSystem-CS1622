@@ -17,7 +17,7 @@ public class Reservation {
     }
 
     /**
-     * a reservation contructor that takes inputs
+     * a reservation contructor that takes inputs.
      * @param name
      * @param dateArrival
      * @param room
